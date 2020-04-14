@@ -1,0 +1,6 @@
+---
+:max_retries: 2
+:concurrency: 1
+:queues:
+  - default
+  - mailers

@@ -1,15 +1,73 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Twitter1</title>
+    <title>WebProject</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "jquery-3.2.1.min.js" %>
+    <%= javascript_include_tag "main.js" %>
+    <%= javascript_include_tag "animsition.min.js" %>
+    <%= javascript_include_tag "popper.js" %>
+    <%= javascript_include_tag "bootstrap.min.js" %>
+
+    <%= javascript_include_tag "moment.min.js" %>
+    <%= javascript_include_tag "daterangepicker.js" %>
+    <%= javascript_include_tag "countdowntime.js" %>
+    <%= javascript_include_tag "select2.min.js" %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "bootstrap.css" %>
+    <%= stylesheet_link_tag "bootstrap.min.css" %>
+    <%= stylesheet_link_tag "animate.css" %>
+    <%= stylesheet_link_tag "animsition.min.css" %>
+    <%= stylesheet_link_tag "application.css" %>
+    <%= stylesheet_link_tag "bootstrap-grid.min.css" %>
+    <%= stylesheet_link_tag "bootstrap-reboot.css" %>
+    <%= stylesheet_link_tag "daterangepicker.css" %>
+    <%= stylesheet_link_tag "select2.min.css" %>
+    <%= stylesheet_link_tag "select2.css" %>
+    <%= stylesheet_link_tag "perfect-scrollbar.css" %>
+    <%= stylesheet_link_tag "hamburgers.min.css" %>
+    <%= stylesheet_link_tag "icon-font.min" %>
+    <%= stylesheet_link_tag "font-awesome.css" %>
+    <%= stylesheet_link_tag "font-awesome.min.css" %>
+
   </head>
 
   <body>
+    <div id="dropDownSelect1">
+      <select class="" id="user-locale">
+        <option value="en">English</option>
+        <option value="ru">Russian</option>
+        <option value="de">Germen</option>
+      </select>
+    </div>
     <%= yield %>
   </body>
-</html>
+<script>
+   var queryString = window.location.search
+    var urlParams = new URLSearchParams(queryString);
+    var locale = urlParams.get('locale')
+    if(locale != "" && locale != null){
+      $('#user-locale').val(locale)
+    }
+    //$("#dropDownSelect1 select option:selected").val(locale)
+    $(".selection-2").select2({
+      minimumResultsForSearch: 20,
+      dropdownParent: $('#dropDownSelect1')
+    });
+    $("#dropDownSelect1 select").change(function(){
+      window.location = "/contact?locale="+$(this).val(); 
+    })
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+
+  </script>

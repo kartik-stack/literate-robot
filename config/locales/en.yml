@@ -29,5 +29,19 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
+
 en:
-  hello: "Hello world"
+  welcome: "Send Us A Message"
+  fname: "TELL US YOUR NAME"
+  email: "ENTER YOUR EMAIL"
+  mobile: "ENTER PHONE NUMBER"
+  message: "MESSAGE"
+  submit: "SEND MESSAGE"
+  address: "Address" 
+  talk: "Lets Talk"
+  support: "General Support"
+  messageplace: "Write us a message"
+  fplace: "First name"
+  lplace: "Last name" 
+
+#api-token: 1/0c6eec52aae1fc22caad5a5d55858b485ea1d6fa
