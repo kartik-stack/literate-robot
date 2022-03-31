@@ -126,7 +126,8 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
     public_suffix (4.0.4)
-    puma (3.12.4)
+    puma (4.3.12)
+      nio4r (~> 2.0)
     rack (2.2.2)
     rack-contrib (2.2.0)
       rack (~> 2.0)
@@ -242,7 +243,7 @@ DEPENDENCIES
   meta_request
   mysql2
   pry
-  puma (~> 3.11)
+  puma (~> 4.3)
   rails (~> 5.2.2, >= 5.2.2.1)
   rails-i18n
   sass-rails (~> 5.0)
